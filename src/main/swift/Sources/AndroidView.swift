@@ -36,9 +36,10 @@ open class AndroidView: JavaObject {
     
     // MARK: - Methods
     
-    public func findViewById(_ id: Int) {
+    @inline(__always)
+    public func findViewById(_ id: Android.R.ID) -> Android.View.View? {
         
-        
+        return findViewById(id.rawValue)
     }
     
     open func findViewById(_ id: Int) -> Android.View.View? {

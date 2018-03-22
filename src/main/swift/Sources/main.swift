@@ -35,9 +35,7 @@ final class SwiftBluetoothScannerActivityBinding_ListenerImpl: SwiftBluetoothSca
     
     private lazy var layoutInflater: Android.View.LayoutInflater = Android.View.LayoutInflater(casting: self.responder.getLayoutInflater())!
     
-    private lazy var listAdapter: ListAdapter = ListAdapter(layoutInflater: self.layoutInflater,
-                                                            cellResource: self.responder.getCellResource(),
-                                                            textViewResource: self.responder.getTextViewResource())
+    private lazy var listAdapter: ListAdapter = ListAdapter(layoutInflater: self.layoutInflater)
     
     override func viewDidLoad() {
         
@@ -67,17 +65,13 @@ extension SwiftBluetoothScannerActivityBinding_ListenerImpl {
         
         let layoutInflater: Android.View.LayoutInflater
         
-        let cellResource: Int
+        let cellResource = Android.R.Layout(name: "cell")
         
-        let textViewResource: Int
+        let textViewResource = Android.R.ID(name: "textView")
         
-        init(layoutInflater: Android.View.LayoutInflater,
-             cellResource: Int,
-             textViewResource: Int) {
+        init(layoutInflater: Android.View.LayoutInflater) {
             
             self.layoutInflater = layoutInflater
-            self.cellResource = cellResource
-            self.textViewResource = textViewResource
         }
         
         var results: [Bluetooth.Address: Android.Bluetooth.LE.ScanResult] = [:] {

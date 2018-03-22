@@ -13,21 +13,45 @@ public extension Android {
     public typealias R = AndroidResource
 }
 
-public struct AndroidResource: RawRepresentable {
+public extension Android.R {
+    
+    public typealias ID = AndroidResourceIdentifier
+    
+    public typealias Layout = AndroidLayoutIdentifier
+}
+
+public protocol AndroidResource: RawRepresentable {
+    
+    var rawValue: Int { get }
+    
+    init(rawValue: Int)
+    
+    init(name: String)
+}
+
+public struct AndroidResourceIdentifier: AndroidResource {
     
     public let rawValue: Int
     
     public init(rawValue: Int) {
-        
-        self.init(rawValue: rawValue)
+        self.rawValue = rawValue
+    }
+}
+
+public struct AndroidLayoutIdentifier: AndroidResource {
+    
+    public let rawValue: Int
+    
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
     }
 }
 
 // MARK: - Convenience Intializers
 
-public extension Android.R {
+public extension Android.R.ID {
     
-    public init(id name: String) {
+    public init(name: String) {
         
         /// JNI Cache
         struct JNICache {
@@ -42,17 +66,20 @@ public extension Android.R {
         var cache: jmethodID?
         
         let __value = JNIField.GetStaticIntField(fieldName: name,
-                                                    fieldType: "I",
-                                                    fieldCache: &cache,
-                                                    className: JNICache.className,
-                                                    classCache: &JNICache.jniClass )
+                                                 fieldType: "I",
+                                                 fieldCache: &cache,
+                                                 className: JNICache.className,
+                                                 classCache: &JNICache.jniClass )
         
         let value = Int(__value)
         
         self.init(rawValue: value)
     }
+}
+
+public extension Android.R.Layout {
     
-    public init(layout name: String) {
+    public init(name: String) {
         
         /// JNI Cache
         struct JNICache {

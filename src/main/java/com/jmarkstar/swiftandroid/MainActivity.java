@@ -41,18 +41,4 @@ public class MainActivity extends AppCompatActivity implements SwiftBluetoothSca
 
         tableView.setAdapter(swiftAdapter);
     }
-
-    public int getCellResource() {
-
-        return R.layout.cell;
-
-        //LayoutInflater inflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        //inflater.inflate(R.layout.cell, parent, false);
-    }
-
-    public int getTextViewResource() {
-
-        return R.id.textView;
-    }
 }

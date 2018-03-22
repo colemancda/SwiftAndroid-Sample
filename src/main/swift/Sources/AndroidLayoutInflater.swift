@@ -35,7 +35,7 @@ public final class AndroidLayoutInflater: JavaObject {
     // MARK: - Methods
     
     /// Inflate a new view hierarchy from the specified xml resource.
-    public func inflate(resource: Android.R, root: Android.View.ViewGroup? = nil, attachToRoot: Bool? = nil) -> Android.View.View {
+    public func inflate(resource: Android.R.Layout, root: Android.View.ViewGroup? = nil, attachToRoot: Bool? = nil) -> Android.View.View {
         
         let attachToRoot = attachToRoot ?? (root != nil)
         
