@@ -25,8 +25,6 @@ public protocol AndroidResource: RawRepresentable {
     var rawValue: Int { get }
     
     init(rawValue: Int)
-    
-    init(name: String)
 }
 
 public struct AndroidResourceIdentifier: AndroidResource {
@@ -49,55 +47,19 @@ public struct AndroidLayoutIdentifier: AndroidResource {
 
 // MARK: - Convenience Intializers
 
-public extension Android.R.ID {
+public extension AndroidResource {
     
-    public init(name: String) {
+    public init(name: String, className: String) {
         
-        /// JNI Cache
-        struct JNICache {
-            
-            /// JNI Java class name
-            static let className = "android/R$id"
-            
-            /// JNI Java class
-            static var jniClass: jclass?
-        }
+        var jniClass: jclass?
         
         var cache: jmethodID?
         
         let __value = JNIField.GetStaticIntField(fieldName: name,
                                                  fieldType: "I",
                                                  fieldCache: &cache,
-                                                 className: JNICache.className,
-                                                 classCache: &JNICache.jniClass )
-        
-        let value = Int(__value)
-        
-        self.init(rawValue: value)
-    }
-}
-
-public extension Android.R.Layout {
-    
-    public init(name: String) {
-        
-        /// JNI Cache
-        struct JNICache {
-            
-            /// JNI Java class name
-            static let className = "android/R$layout"
-            
-            /// JNI Java class
-            static var jniClass: jclass?
-        }
-        
-        var cache: jmethodID?
-        
-        let __value = JNIField.GetStaticIntField(fieldName: name,
-                                                 fieldType: "I",
-                                                 fieldCache: &cache,
-                                                 className: JNICache.className,
-                                                 classCache: &JNICache.jniClass )
+                                                 className: className,
+                                                 classCache: &jniClass )
         
         let value = Int(__value)
         

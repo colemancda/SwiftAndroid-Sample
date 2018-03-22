@@ -65,9 +65,9 @@ extension SwiftBluetoothScannerActivityBinding_ListenerImpl {
         
         let layoutInflater: Android.View.LayoutInflater
         
-        let cellResource = Android.R.Layout(name: "cell")
+        let cellResource = Android.R.Layout(name: "cell", className: "com/jmarkstar/swiftandroid/R$layout")
         
-        let textViewResource = Android.R.ID(name: "textView")
+        let textViewResource = Android.R.ID(name: "textView", className: "com/jmarkstar/swiftandroid/R$id")
         
         init(layoutInflater: Android.View.LayoutInflater) {
             

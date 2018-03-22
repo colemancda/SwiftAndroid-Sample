@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements SwiftBluetoothSca
     }
 
     public void setAdapter(Object adapter) {
-
+        
         SwiftAdapter swiftAdapter = (SwiftAdapter)adapter;
 
         tableView.setAdapter(swiftAdapter);
