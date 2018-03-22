@@ -36,7 +36,7 @@ public final class AndroidBluetoothLowEnergyScanResult: JavaObject {
         
         var __locals = [jobject]()
         
-        var __args = [jvalue].init(repeating: jvalue(), count: 1)
+        var __args = [jvalue](repeating: jvalue(), count: 1)
         
         let __return = JNIMethod.CallObjectMethod(object: javaObject,
                                                   methodName: "getDevice",

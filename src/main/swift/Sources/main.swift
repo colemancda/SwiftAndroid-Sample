@@ -3,6 +3,7 @@ import java_swift
 import java_lang
 import java_util
 import Foundation
+import Bluetooth
 
 final class SwiftBluetoothScannerActivityBinding_ListenerImpl: SwiftBluetoothScannerActivityBinding_ListenerBase {
     
@@ -48,7 +49,7 @@ final class SwiftBluetoothScannerActivityBinding_ListenerImpl: SwiftBluetoothSca
         
         let scanCallback = ScanCallback { [weak self] in
             
-            self?.listAdapter.data.append($0)
+            self?.listAdapter.results[$0.device.address] = $0
             
             // FIXME: Properly refresh list view
             self?.listAdapter.withJavaObject {
@@ -79,13 +80,14 @@ extension SwiftBluetoothScannerActivityBinding_ListenerImpl {
             self.textViewResource = textViewResource
         }
         
-        var data = [Android.Bluetooth.LE.ScanResult]() {
-            
-            didSet {
-                NSLog("\(type(of: self)): \(#function)")
-                self.notifyDataSetChanged()
-            }
+        var results: [Bluetooth.Address: Android.Bluetooth.LE.ScanResult] = [:] {
+            didSet { data = results.values.sorted(by: { $0.0.device.address.description < $0.1.device.address.description }) }
         }
+        
+        private var data = [Android.Bluetooth.LE.ScanResult]() {
+            didSet { self.notifyDataSetChanged() }
+        }
+        
         
         override func getCount() -> Int {
             
@@ -98,11 +100,9 @@ extension SwiftBluetoothScannerActivityBinding_ListenerImpl {
             
             NSLog("\(type(of: self)): \(#function)")
             
-            let view: Android.View.View = /* convertView ?? */ layoutInflater.inflate(resource: cellResource,
-                                                                                root: parent,
-                                                                                attachToRoot: false)
-            
-            //NSLog("view.")
+            let view = convertView ?? layoutInflater.inflate(resource: cellResource,
+                                                             root: parent,
+                                                             attachToRoot: false)
             
             guard let textViewObject = view.findViewById(textViewResource)
                 else { fatalError("No view for \(textViewResource)") }
