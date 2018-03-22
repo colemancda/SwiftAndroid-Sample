@@ -36,6 +36,11 @@ open class AndroidView: JavaObject {
     
     // MARK: - Methods
     
+    public func findViewById(_ id: Int) {
+        
+        
+    }
+    
     open func findViewById(_ id: Int) -> Android.View.View? {
         
         var __locals = [jobject]()

@@ -35,7 +35,7 @@ public final class AndroidLayoutInflater: JavaObject {
     // MARK: - Methods
     
     /// Inflate a new view hierarchy from the specified xml resource.
-    public func inflate(resource: Int, root: Android.View.ViewGroup? = nil, attachToRoot: Bool? = nil) -> Android.View.View {
+    public func inflate(resource: Android.R, root: Android.View.ViewGroup? = nil, attachToRoot: Bool? = nil) -> Android.View.View {
         
         let attachToRoot = attachToRoot ?? (root != nil)
         
@@ -43,7 +43,7 @@ public final class AndroidLayoutInflater: JavaObject {
         
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         
-        __args[0] = JNIType.toJava(value: resource, locals: &__locals)
+        __args[0] = JNIType.toJava(value: resource.rawValue, locals: &__locals)
         __args[1] = JNIType.toJava(value: root, locals: &__locals)
         __args[2] = JNIType.toJava(value: attachToRoot, locals: &__locals)
         

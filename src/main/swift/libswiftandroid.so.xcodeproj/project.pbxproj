@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0DC3CE2063FDAE00EB5CD9 /* AndroidResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0DC3CD2063FDAE00EB5CD9 /* AndroidResource.swift */; };
+		6E0DC3D02063FE7600EB5CD9 /* AndroidManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0DC3CF2063FE7600EB5CD9 /* AndroidManifest.swift */; };
 		6E9AAE732062CF6200F24DFC /* JavaVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9AAE722062CF6200F24DFC /* JavaVM.framework */; };
 		6E9AAE752062FDD200F24DFC /* AndroidAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AAE742062FDD200F24DFC /* AndroidAdapter.swift */; };
 		6E9AAE772063C8F600F24DFC /* AndroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AAE762063C8F600F24DFC /* AndroidView.swift */; };
@@ -649,6 +651,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E0DC3CD2063FDAE00EB5CD9 /* AndroidResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidResource.swift; sourceTree = "<group>"; };
+		6E0DC3CF2063FE7600EB5CD9 /* AndroidManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidManifest.swift; sourceTree = "<group>"; };
 		6E9AAE722062CF6200F24DFC /* JavaVM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaVM.framework; path = System/Library/Frameworks/JavaVM.framework; sourceTree = SDKROOT; };
 		6E9AAE742062FDD200F24DFC /* AndroidAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidAdapter.swift; sourceTree = "<group>"; };
 		6E9AAE762063C8F600F24DFC /* AndroidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidView.swift; sourceTree = "<group>"; };
@@ -1559,7 +1563,7 @@
 			path = ".build/checkouts/Bluetooth.git--1679829496101537995/Sources";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -1569,7 +1573,6 @@
 				OBJ_584 /* Products */,
 				6E9AAE712062CF6200F24DFC /* Frameworks */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_567 /* java_swift 2.2.1 */ = {
@@ -1630,6 +1633,8 @@
 				6E9AAE782063C90200F24DFC /* AndroidViewGroup.swift */,
 				6E9AAE7A2063D34300F24DFC /* AndroidTextView.swift */,
 				6E9AAE7C2063D91400F24DFC /* AndroidLayoutInflater.swift */,
+				6E0DC3CD2063FDAE00EB5CD9 /* AndroidResource.swift */,
+				6E0DC3CF2063FE7600EB5CD9 /* AndroidManifest.swift */,
 				OBJ_21 /* SwiftActivityBinding.swift */,
 				OBJ_22 /* SwiftActivityBinding_Listener.swift */,
 				OBJ_23 /* SwiftActivityBinding_Responder.swift */,
@@ -2160,7 +2165,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_584 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2456,6 +2461,7 @@
 				OBJ_635 /* AndroidBluetoothLowEnergyScanCallback.swift in Sources */,
 				6E9AAE792063C90200F24DFC /* AndroidViewGroup.swift in Sources */,
 				OBJ_636 /* AndroidBluetoothLowEnergyScanCallbackType.swift in Sources */,
+				6E0DC3CE2063FDAE00EB5CD9 /* AndroidResource.swift in Sources */,
 				OBJ_637 /* AndroidBluetoothLowEnergyScanFilter.swift in Sources */,
 				OBJ_638 /* AndroidBluetoothLowEnergyScanMode.swift in Sources */,
 				6E9AAE7D2063D91400F24DFC /* AndroidLayoutInflater.swift in Sources */,
@@ -2467,6 +2473,7 @@
 				OBJ_643 /* AndroidContext.swift in Sources */,
 				OBJ_644 /* AndroidContextSystemService.swift in Sources */,
 				OBJ_645 /* SwiftActivityBinding.swift in Sources */,
+				6E0DC3D02063FE7600EB5CD9 /* AndroidManifest.swift in Sources */,
 				OBJ_646 /* SwiftActivityBinding_Listener.swift in Sources */,
 				OBJ_647 /* SwiftActivityBinding_Responder.swift in Sources */,
 				OBJ_652 /* SwiftBluetoothScannerActivityBinding.swift in Sources */,
